@@ -45,7 +45,7 @@ public class Datamanager {
         if (dataFile.length() == 0) {
             System.out.println("empty file");
             throw new IOException();
-        }
+        } 
         ArrayList<String> dataItems = (ArrayList) Files.readAllLines(dataFile.toPath(), Charset.defaultCharset());
 
         return dataItems;
@@ -57,7 +57,8 @@ public class Datamanager {
             ArrayList<String> dataItems = readFile();
             taskList = parse(dataItems);
         } catch (IOException e) {
-            e.printStackTrace();
+            System.out.println(e.getMessage());
+            //e.printStackTrace();
         }
         return taskList;
     }
